@@ -27,66 +27,70 @@ typedef struct mdict{
 
 // Function declarations:
 
-// Function that allows to insert a new word in the "trie"
-void insertWord(TrieNode*,char*);
+// Add words contained in "string" to the dictionary "dict"
+void addWords(Dictionary*,char*,int);
 
-// Function that allows to delete a word from the "trie"
+// Deletes a word from the "Trie"
 void deleteWord(TrieNode*,char*);
 
-// Function that verifies whether the word is in the "trie" or not
-int wordExist(TrieNode*,char*);
-
-// Function that allows to put the character "c" in the node pointed by "tr"
-TrieNode *insertNode(TrieNode*,char);
-
-// Prints all the words stored in *tr
-void printDictionary(Dictionary);
-
-// Prints all the words that starts with tr->letter
-void printChildWords(TrieNode*,char*,int);
-
-// Destroys the Trie
+// Destroys the given "Trie"
 void destroyTrie(TrieNode*);
 
-// Obtains a string of characters from stdin
-char *getString(void);
-
-// Change upper to lower case in a word
-char *lowerCase(char*);
+// Looks for at least one "TrieNode" that contains a '*' as letter value
+int emptyNode(TrieNode*);
 
 // Gets and validates the path given by the user
 char *getPath(int,char**);
 
+// Obtains a string of characters from stdin
+char *getString(void);
+
 // Initializes the dictionary
 void initDictionary(Dictionary*,char*);
 
-// Add words contained in a line to the dictionary's data
-void addWords(Dictionary*,char*,int);
+// Function that allows to put the character "c" in the node pointed by "tr"
+TrieNode *insertNode(TrieNode*,char);
 
-void removeWords(Dictionary*,char*,int);
+// Function that allows to insert a new word in the "trie"
+void insertWord(TrieNode*,char*);
 
-// Updates the dictionary, loading the words from the *.txt file to dictionary.data
-void updateDictionary(Dictionary*);
-
-// Sugests words that start with "string", searching them in "dictionary"
-void sugestWords(char*,Dictionary);
-
-// Searches the string given and return the node that contains the last character
-TrieNode *searchNode(TrieNode*,char*);
-
-// Look for at least one TrieNode that contains a '*' as letter value
-int emptyNode(TrieNode*);
-
+// Translate the option of the user into numbers that represent different options
 int interpretOption(char*);
 
+// Change upper to lower case in a word
+char *lowerCase(char*);
+
+// Verifies if the string only have letters
+int onlyLetters(char*);
+
+// Verifies if the string only have words
 int onlyWords(char*);
 
-int onlyLetters(char*);
+// Prints all the words that starts with tr->letter
+void printChildWords(TrieNode*,char*,int);
+
+// Prints all the words stored in *tr
+void printDictionary(Dictionary);
+
+// Prints the functionalities of the program
+void printOptions(void);
 
 // Prints a welcome message and the functionalities of the program
 void printWelcome(void);
 
-// Prints the functionalities of the program
-void printOptions(void);
+// Remove words contained in "string" from the dictionary "dict"
+void removeWords(Dictionary*,char*,int);
+
+// Searches the string given and return the node that contains the last character
+TrieNode *searchNode(TrieNode*,char*);
+
+// Sugests words that start with "string", searching them in "dictionary"
+void sugestWords(char*,Dictionary);
+
+// Updates the dictionary, loading the words from the *.txt file to dictionary.data
+void updateDictionary(Dictionary*);
+
+// Function that verifies whether the word is in the "trie" or not
+int wordExist(TrieNode*,char*);
 
 #endif
