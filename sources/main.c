@@ -6,7 +6,6 @@ int main(int argc,char **argv){
 	printWelcome();//prints a welcome message and the functionalities of the program
 	updateDictionary(&dictionary);//loads words from the *.txt file to the Dictionary structure
 	char *option=NULL;//stores the option given by the user
-	
 	while(1){//main loop
 		option=getString();//obtains the user's option
 		switch(interpretOption(option)){
@@ -30,6 +29,7 @@ int main(int argc,char **argv){
 				break;
 			case 6://End of the program
 				destroyTrie(dictionary.data);//destroys the data of the dictionary
+				printf("¡Hasta pronto!\n\n");
 				return 0;
 			case 0:
 				printf("ERROR: Solo se permite uno de los siguientes símbolos al inicio: {+,-,!,?}\n\n");

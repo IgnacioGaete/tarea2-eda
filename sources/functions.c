@@ -145,6 +145,7 @@ void insertWord(TrieNode *tr, char *word){
 }
 
 // Translate the option of the user into numbers that represent different options
+/* READY */
 int interpretOption(char *string){
 	if(strlen(string)==0)
 		return 6;//exit the program
@@ -392,4 +393,3 @@ int wordExist(TrieNode *tr, char *word){
 	}
 	return 0;
 }
-
